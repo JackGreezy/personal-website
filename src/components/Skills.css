@@ -1,0 +1,15 @@
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-list li {
+  background-color: #ecf0f1;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+

@@ -1,0 +1,28 @@
+.header {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 10px 0;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.profile-image {
+  border-radius: 50%;
+  border: 5px solid white;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-top: 5px;
+  color: #ecf0f1;
+}
+
