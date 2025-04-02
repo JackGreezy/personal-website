@@ -6,6 +6,25 @@
   min-height: 100vh;
 }
 
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+  color: #e0e0e0;
+}
+
+.dark-mode a {
+  color: #90caf9;
+}
+
+.dark-mode a:hover {
+  color: #42a5f5;
+}
+
 a {
   color: #3498db;
   text-decoration: none;
@@ -23,3 +42,13 @@ h3 {
   color: #2c3e50;
 }
 
+.skill-form {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.add-skill-section {
+  max-width: 800px;
+  margin: 0 auto;
+}

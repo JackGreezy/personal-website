@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import "./App.css"
 import Header from "./components/Header"
 import Section from "./components/Section"
@@ -5,10 +8,32 @@ import Skills from "./components/Skills"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
+// Import Material UI components
+import { Button, TextField } from "@mui/material"
+import { ThemeProvider, createTheme } from "@mui/material/styles"
 
 function App() {
-  // Data that could come from an API or database in a real app
-  const skills = ["HTML5 & CSS3", "JavaScript", "React", "Node.js", "UI/UX Design"]
+  // Add state for dark mode
+  const [darkMode, setDarkMode] = useState(false)
+
+  // Add state for a new skill
+  const [newSkill, setNewSkill] = useState("")
+  const [skills, setSkills] = useState(["HTML5 & CSS3", "JavaScript", "React", "Node.js", "UI/UX Design"])
+
+  // Create a theme based on dark mode state
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? "dark" : "light",
+    },
+  })
+
+  // Event handler to add a new skill
+  const handleAddSkill = () => {
+    if (newSkill.trim() !== "") {
+      setSkills([...skills, newSkill])
+      setNewSkill("")
+    }
+  }
 
   const projects = [
     {
@@ -26,32 +51,61 @@ function App() {
   ]
 
   return (
-    <div className="App">
-      <Header name="Jack Greenberg" title="Web Developer & Designer" imageUrl="/placeholder.svg?height=150&width=150" />
+    <ThemeProvider theme={theme}>
+      <div className={`App ${darkMode ? "dark-mode" : ""}`}>
+        <Header
+          name="Jack Greenberg"
+          title="Texas ECE Student"
+          imageUrl="/placeholder.svg?height=150&width=150"
+          darkMode={darkMode}
+          toggleDarkMode={() => setDarkMode(!darkMode)}
+        />
 
-      <Section title="About Me">
-        <p>
-          Hello! I'm a passionate web developer and designer currently studying ECE at Texas. I love creating
-          beautiful, functional websites and applications that solve real-world problems.
-        </p>
-        <p>When I'm not coding, you can find me hiking, reading science fiction, or experimenting with new recipes.</p>
-      </Section>
+        <Section title="About Me">
+          <p>
+            Hello! I'm a passionate web developer and designer currently studying ECE. I love creating beautiful,
+            functional websites and applications that solve real-world problems.
+          </p>
+          <p>
+            When I'm not coding, you can find me hiking, reading science fiction, or experimenting with new recipes.
+          </p>
+        </Section>
 
-      <Skills skills={skills} />
+        <Skills skills={skills} />
 
-      <Projects projects={projects} />
+        {/* Add skill form using Material UI components */}
+        <div className="add-skill-section">
+          <Section title="Add a Skill">
+            <div className="skill-form">
+              <TextField
+                label="New Skill"
+                variant="outlined"
+                value={newSkill}
+                onChange={(e) => setNewSkill(e.target.value)}
+                size="small"
+                style={{ marginRight: "10px" }}
+              />
+              <Button variant="contained" color="primary" onClick={handleAddSkill}>
+                Add Skill
+              </Button>
+            </div>
+          </Section>
+        </div>
 
-      <Contact
-        email="alex@example.com"
-        socialLinks={[
-          { name: "GitHub", url: "https://github.com" },
-          { name: "LinkedIn", url: "https://linkedin.com" },
-          { name: "Twitter", url: "https://twitter.com" },
-        ]}
-      />
+        <Projects projects={projects} />
 
-      <Footer />
-    </div>
+        <Contact
+          email="jack@example.com"
+          socialLinks={[
+            { name: "GitHub", url: "https://github.com" },
+            { name: "LinkedIn", url: "https://linkedin.com" },
+            { name: "Twitter", url: "https://twitter.com" },
+          ]}
+        />
+
+        <Footer />
+      </div>
+    </ThemeProvider>
   )
 }
 

@@ -4,6 +4,11 @@
   text-align: center;
   padding: 60px 20px;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.header.dark-mode {
+  background-color: #1a1a2e;
 }
 
 .header h1 {
@@ -26,3 +31,10 @@
   color: #ecf0f1;
 }
 
+.theme-toggle {
+  position: absolute !important;
+  top: 20px;
+  right: 20px;
+  color: white !important;
+  border-color: white !important;
+}
