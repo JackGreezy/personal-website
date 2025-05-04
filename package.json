@@ -16,7 +16,6 @@
     "@mui/material": "^7.0.2",
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
-    "gh-pages": "^6.3.0",
     "react-scripts": "^5.0.1"
   },
   "browserslist": {
@@ -30,5 +29,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
