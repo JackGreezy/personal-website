@@ -10,7 +10,25 @@
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.0.2",
+    "@mui/material": "^7.0.2",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
     "gh-pages": "^6.3.0",
     "react-scripts": "^5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
