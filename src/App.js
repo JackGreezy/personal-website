@@ -54,7 +54,7 @@ function App() {
         <Header
           name="Jack Greenberg"
           title="Texas ECE Student"
-          imageUrl="/placeholder.svg?height=150&width=150"
+          imageUrl="/profile.jpg"
           darkMode={darkMode}
           toggleDarkMode={() => setDarkMode(!darkMode)}
         />
