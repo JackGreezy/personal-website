@@ -1,0 +1,9 @@
+{
+    "git.ignoreLimitWarning": true,
+    "files.exclude": {
+        "**/node_modules": true
+    },
+    "search.exclude": {
+        "**/node_modules": true
+    }
+}
