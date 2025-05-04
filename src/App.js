@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import "./App.css"
 import Header from "./components/Header"
@@ -52,7 +50,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={`App ${darkMode ? "dark-mode" : ""}`}>
+      <div id="main-content" className={`App ${darkMode ? "dark-mode" : ""}`}>
         <Header
           name="Jack Greenberg"
           title="Texas ECE Student"
